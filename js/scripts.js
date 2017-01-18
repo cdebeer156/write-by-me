@@ -1,4 +1,4 @@
-$('body').scrollspy({ target: '#navbar-example' })
+$('body').scrollspy({ target: '#scroll-nav' })
 
 $('#concept').click(function(){
 	window.open('../final_project/pdf/DeBeer_WritingExampleIntro.pdf', '_blank');
@@ -21,9 +21,22 @@ $('#citipix').click(function(){
 })
 
 $('#linkedin').click(function(){
-	window.open('www.linkedin.com/in/cdebeer156', '_blank');
+	window.open('http://www.linkedin.com/in/cdebeer156', '_blank');
 })
 
 $('#twitter').click(function(){
 	window.open('https://twitter.com/CarlJDeBeer', '_blank');
 })
+
+$(window).scroll(function(){ 
+    if ($(this).scrollTop() > 100) { 
+        $('#scroll').fadeIn(); 
+    } else { 
+        $('#scroll').fadeOut(); 
+    } 
+});
+
+$('#scroll').click(function(){ 
+    $("html").animate({ scrollTop: 0 }, 600); 
+    return false; 
+});
